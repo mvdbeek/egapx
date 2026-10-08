@@ -242,8 +242,6 @@ process gnomon_report {
     done
     mkdir -p tmp/interim
 
-    ulimit -c unlimited
-
     gnomon_report $params -nogenbank -egapx  -input-slices input_slices.mft -asn-cache tmp/asncache/  -start-job-id \$start_job_id -workers ${task.ext.threads} -input-jobs $jobs -O tmp/interim > rm_me.stdout 2> rm_me.stderr
 
     mkdir -p output
