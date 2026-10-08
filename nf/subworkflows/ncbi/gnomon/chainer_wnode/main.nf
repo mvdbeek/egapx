@@ -113,7 +113,7 @@ process run_chainer {
 
 
     mkdir -p tmp/interim
-    chainer_wnode $params -start-job-id \$start_job_id  -workers ${task.ext.threads} -input-jobs ${job} -O tmp/interim -nogenbank -asn-cache tmp/asncache/ -evidence-denylist-manifest evidence_denylist.mft -gap-fill-allowlist-manifest gap_fill_allowlist.mft -param ${hmm_params} -scaffolds-manifest scaffolds.mft -trusted-genes-manifest trusted_genes.mft > rm_me.out 2> rm_me.err
+    chainer_wnode $params -start-job-id \$start_job_id  -workers ${task.ext.threads} -input-jobs ${job} -O tmp/interim -nogenbank -asn-cache tmp/asncache/ -evidence-denylist-manifest evidence_denylist.mft -gap-fill-allowlist-manifest gap_fill_allowlist.mft -param ${hmm_params} -scaffolds-manifest scaffolds.mft -trusted-genes-manifest trusted_genes.mft > rm_me.out
 
     mkdir -p output
     cat tmp/interim/* > output/chainer_wnode.${task.index}.gpx-job.asnb
